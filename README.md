@@ -23,29 +23,18 @@ Dados iniciais
 
 Dois usuários já estão cadastrados:
 
-"Login
-"	"Senha
-"	"Perfil
-"
-"convidado
-"	"manager
-"	"Usuário comum
-"
-"admin
-"	"suporte
-"	"Administrador
-"
+Usuario administrador: admin
+Senha: suporte
 
-
-Três países estão cadastrados também.
-
+Usuario comum: convidado
+Senha: manager
 
 Aplicação 
 
 Tela de login, solicitando login e senha
 Autenticação feita contra o backend
-Deve salvar o token no storage local da aplicação no navegador, assim como a informação de se o usuário é administrador ou não (vem nas informações de resposta da autorização)
-Tela principal com menu superior simples, com uma opção "Países". Na parte superior da tela o nome do usuário deve ser apresentado (vem nas informações de resposta da autorização)
+Deve salvar o token no storage local da aplicação no navegador, assim como a informação de se o usuário é administrador ou não
+Tela principal com menu superior simples, com uma opção "Países". Na parte superior da tela o nome do usuário deve ser apresentado
 Tela para consulta/edição de países
 Só permite editar/excluir/incluir se for administrador
 Deve exibir lista dos países em tabela paginada, com paginação no cliente e ordenação também no cliente
