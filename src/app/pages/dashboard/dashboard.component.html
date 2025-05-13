@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Países</h2>
+      <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+        <ng-container matColumnDef="nome">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Nome </th>
+          <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="sigla">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Sigla </th>
+          <td mat-cell *matCellDef="let element"> {{element.sigla}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="gentilico">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Nacionalidade </th>
+          <td mat-cell *matCellDef="let element"> {{element.gentilico}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="acoes" >
+          <th mat-header-cell *matHeaderCellDef> Ações </th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-button (click)="editCountry(element)" [disabled]="!isAdmin">Editar</button>
+            <button mat-button color="warn" (click)="deleteCountry(element)" [disabled]="!isAdmin">Excluir</button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    </div>
+    
+    <div class="col-md-12" *ngIf="isAdmin">
+      <h3>Novo País</h3>
+      <form (ngSubmit)="addCountry()">
+        <mat-form-field class="mb-3">
+          <mat-label>Nome</mat-label>
+          <input matInput [(ngModel)]="newCountry.nome" name="nome" required>
+        </mat-form-field>
+        <mat-form-field class="mb-3">
+          <mat-label>Sigla</mat-label>
+          <input matInput [(ngModel)]="newCountry.sigla" name="sigla" required maxlength="2">
+        </mat-form-field>
+        <mat-form-field class="mb-3">
+          <mat-label>Nacionalidade</mat-label>
+          <input matInput [(ngModel)]="newCountry.gentilico" name="gentilico" required>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Adicionar</button>
+      </form>
+
+      <h3 *ngIf="editingCountry">Editar País</h3>
+      <form *ngIf="editingCountry" (ngSubmit)="saveCountry()">
+        <mat-form-field class="mb-3">
+          <mat-label>Nome</mat-label>
+          <input matInput [(ngModel)]="editingCountry.nome" name="editName" required>
+        </mat-form-field>
+        <mat-form-field class="mb-3">
+          <mat-label>Sigla</mat-label>
+          <input matInput [(ngModel)]="editingCountry.sigla" name="editSigla" required maxlength="2" >
+        </mat-form-field>
+        <mat-form-field class="mb-3">
+          <mat-label>Nacionalidade</mat-label>
+          <input matInput [(ngModel)]="editingCountry.gentilico" name="editGentilico" required>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Salvar</button>
+        <button mat-button type="button" (click)="cancelEdit()">Cancelar</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<nav class="custom-navbar">
+    <div class="custom-container">
+
+        <a class="logo" href="https://managersystems.com.br" target="_blank">
+            <img src="../../../assets/logo.jpg" alt="Logo">
+        </a>
+            <h5>{{username}}</h5>
+        <div class="custom-navbar-collapse">
+            <ul class="custom-nav">
+                <li class="custom-nav-item">
+                    <a class="custom-nav-link active" routerLink="/home">Home</a>
+                </li>
+                <li class="custom-nav-item" *ngIf="!isLoggedIn">
+                    <a routerLink="/login" class="custom-nav-link" routerLinkActive="active">Login</a>
+                </li>             
+                <li class="custom-nav-item">
+                    <a routerLink="/paises" class="custom-nav-link" routerLinkActive="active">Paises</a>
+                </li>
+                <li class="custom-nav-item">
+                    <a class="custom-nav-link" href="https://www.linkedin.com/in/vitor-perraro-rosa-283686238/" target="_blank">Desenvolvedor</a>
+                </li>
+                <li class="custom-nav-item" *ngIf="isLoggedIn">
+                    <a class="custom-nav-link" (click)="logout()" style="cursor: pointer;">Sair</a>
+                </li>   
+            </ul>
+        </div>
+    </div>
+</nav>

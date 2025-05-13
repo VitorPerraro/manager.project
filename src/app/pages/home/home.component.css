@@ -1,0 +1,25 @@
+.home-page {
+  color: blueviolet;
+  text-align: center;
+  margin: auto;
+  padding: 20px;
+  font-size: 20px;
+  background: -webkit-linear-gradient(to left, #ffffff, #d9bae7);
+  background: -o-linear-gradient(to left, #ffffff, #d9bae7);
+  background: -moz-linear-gradient(to left, #ffffff, #d9bae7);
+  background: linear-gradient(to left, #ffffff, #d9bae7);
+  margin-top: 30px;
+}
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 10px;
+
+    font-size: 15px;
+    border-radius: 10px;
+    border: none;
+    border-radius: 10px;
+}
+

@@ -1,0 +1,83 @@
+.custom-navbar {
+    background-color: #f8f9fa;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.custom-container {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.custom-brand {
+    display: flex;
+    align-items: center;
+}
+
+.custom-logo {
+    width: 48px;
+    height: 48px;
+}
+
+.custom-navbar-collapse {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.custom-nav {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.custom-nav-item {
+    margin-left: 1rem;
+}
+
+.custom-nav-link {
+    color: rgba(0, 0, 0, 0.9);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.custom-nav-link:hover {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.custom-nav-link.active {
+    font-weight: bold;
+}
+
+.custom-nav-link{
+    border-radius: 100px;
+    width: 50%;
+    margin: 0 auto;
+    height: 55px;
+    background: transparent;
+   cursor: pointer;
+}
+
+.custom-nav-link:hover{
+    color: rgb(132, 14, 201);
+    transition: 0.3s all;
+    
+    background-color: rgb(132, 14, 201);
+    color: white;
+}
+
+img{
+    width: 70px;
+    border-radius: 50%;
+}
+
+h5{
+    padding-top: 10px;
+    padding-left: 50px;
+}
+
